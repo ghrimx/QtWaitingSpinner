@@ -2,8 +2,8 @@ import math
 import sys
 from random import random
 
-from PyQt5.QtCore import Qt, pyqtSlot
-from PyQt5.QtWidgets import (
+from PyQt6.QtCore import Qt, pyqtSlot
+from PyQt6.QtWidgets import (
     QApplication,
     QColorDialog,
     QDoubleSpinBox,
@@ -51,7 +51,7 @@ class SpinnerConfigurator(QWidget):
         button_hbox = QHBoxLayout()
         self.setLayout(grid)
         self.setWindowTitle("QtWaitingSpinner Configurator")
-        self.setWindowFlags(Qt.Dialog)
+        self.setWindowFlags(Qt.WindowType.Dialog)
 
         # SPINNER
         self.spinner = WaitingSpinner(self)
@@ -199,7 +199,7 @@ class SpinnerConfigurator(QWidget):
         clipboard.clear(mode=clipboard.Clipboard)
         clipboard.setText(text, mode=clipboard.Clipboard)
         print(text)
-        msg_box.exec_()
+        msg_box.exec()
 
 
 def main():
